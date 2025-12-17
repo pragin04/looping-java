@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class SumNPositiveNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, sum = 0;
+
+        System.out.print("Enter the number of positive numbers to sum (N): ");
+        n = sc.nextInt();
+
+        int count = 0;
+        while (count < n) {
+            System.out.print("Enter a positive number: ");
+            int num = sc.nextInt();
+
+            if (num < 0) {
+                System.out.println("Negative number ignored. Please enter a positive number.");
+                continue; // skip negative numbers
+            }
+
+            sum += num;
+            count++; // increment only for valid positive numbers
+        }
+
+        System.out.println("Sum of the " + n + " positive numbers = " + sum);
+        sc.close();
+    }
+}
