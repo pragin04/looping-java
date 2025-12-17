@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+
+        System.out.println("Enter positive numbers to sum (enter a negative number to stop):");
+
+        while (true) {
+            int num = sc.nextInt();
+            if (num < 0) {
+                break; // stop the loop if a negative number is entered
+            }
+            sum += num; // add the number to sum
+        }
+
+        System.out.println("Sum of the entered positive numbers = " + sum);
+        sc.close();
+    }
+}
