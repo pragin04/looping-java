@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of N: ");
+        int N = sc.nextInt();
+        System.out.println("Strong numbers from 1 to " + N + " are:");
+        for (int i = 1; i <= N; i++) {
+            if (isStrong(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+    public static boolean isStrong(int num) {
+        int originalNum = num;
+        int sum = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            sum += factorial(digit);
+            num /= 10;
+        }
+        return sum == originalNum;
+    }
+    public static int factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+}
